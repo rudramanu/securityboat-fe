@@ -1,6 +1,9 @@
 import { useEffect, useState } from "react";
+import { useRouter } from "next/router";
 
 const BagItem = ({ item }) => {
+  const router = useRouter();
+
   const buyHandler = () => {
     fetch(`https://securityboat-hn72.onrender.com/orders/place`, {
       method: "POST",
@@ -10,7 +13,10 @@ const BagItem = ({ item }) => {
       },
     })
       .then((response) => response.json())
-      .then((data) => alert(data.message));
+      .then((data) => {
+        alert(data.message);
+        router.replace("/");
+      });
   };
 
   let [total, setTotal] = useState(0);
