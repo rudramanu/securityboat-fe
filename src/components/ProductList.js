@@ -52,10 +52,10 @@ const ProductList = () => {
               key={el._id}
             >
               <Image
-                src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8cHJvZHVjdHxlbnwwfHwwfHx8MA%3D%3D"
-                className="card-img-top"
+                src="/assets/pixel.jpg"
                 alt="Product"
-                style={{ height: "300px", width: "200px" }}
+                width={300} // Set the width to the desired value
+                height={200}
               />
               <div className="card-body">
                 <h5 className="card-title">{el.title}</h5>
