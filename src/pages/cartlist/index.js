@@ -3,6 +3,7 @@ import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
+import Image from "next/image";
 
 const CartList = () => {
   const [data, setData] = useState([]);
@@ -68,7 +69,11 @@ const CartList = () => {
                 }}
                 key={el._id}
               >
-                <img src={randomImage} className="card-img-top" alt="Product" />
+                <Image
+                  src={randomImage}
+                  className="card-img-top"
+                  alt="Product"
+                />
                 <div className="card-body">
                   <div
                     style={{ display: "flex", justifyContent: "space-around" }}
