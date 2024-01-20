@@ -36,12 +36,6 @@ const CartList = () => {
     fetchData();
   }, []);
 
-  const getRandomImage = () => {
-    const width = 300;
-    const height = 200;
-    const randomImageURL = `https://source.unsplash.com/random/${width}x${height}`;
-    return randomImageURL;
-  };
   return (
     <>
       <Navbar />
@@ -60,7 +54,6 @@ const CartList = () => {
           }}
         >
           {data.map((el) => {
-            const randomImage = getRandomImage();
             return (
               <div
                 className="card"
@@ -70,9 +63,10 @@ const CartList = () => {
                 key={el._id}
               >
                 <Image
-                  src={randomImage}
-                  className="card-img-top"
+                  src="/assets/pixel.jpg"
                   alt="Product"
+                  width={300} // Set the width to the desired value
+                  height={200}
                 />
                 <div className="card-body">
                   <div
