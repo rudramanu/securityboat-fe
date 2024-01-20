@@ -17,13 +17,6 @@ const ProductList = () => {
       .then((data) => setData(data));
   };
 
-  const getRandomImage = () => {
-    const width = 300;
-    const height = 200;
-    const randomImageURL = `https://source.unsplash.com/random/${width}x${height}`;
-    return randomImageURL;
-  };
-
   const addToCart = (id) => {
     fetch(`https://securityboat-hn72.onrender.com/cart/add/${id}`, {
       method: "POST",
@@ -50,7 +43,6 @@ const ProductList = () => {
         }}
       >
         {data.map((el) => {
-          const randomImage = getRandomImage();
           return (
             <div
               className="card"
@@ -59,7 +51,12 @@ const ProductList = () => {
               }}
               key={el._id}
             >
-              <Image src={randomImage} className="card-img-top" alt="Product" />
+              <Image
+                src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8cHJvZHVjdHxlbnwwfHwwfHx8MA%3D%3D"
+                className="card-img-top"
+                alt="Product"
+                style={{ height: "300px", width: "200px" }}
+              />
               <div className="card-body">
                 <h5 className="card-title">{el.title}</h5>
                 <p className="card-text">{el.description}</p>
